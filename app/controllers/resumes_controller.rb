@@ -12,7 +12,7 @@ class ResumesController < ApplicationController
     @resume.job = @job
     @resume.user = current_user
     if @resume.save
-      redirect_to job_path(@job)
+      redirect_to job_path(@job), notice: "Applied Job Success"
     else
       render :new
     end
@@ -21,6 +21,6 @@ class ResumesController < ApplicationController
   private
 
   def resume_params
-    params.require(:resume).permit(:content)
+    params.require(:resume).permit(:content, :attachment)
   end
 end
