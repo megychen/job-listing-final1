@@ -1,22 +1,24 @@
-<h4>Better job, better life</h4>
-<hr>
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <td>Title</td>
-      <td>Lower Salary</td>
-      <td>Upper Salary</td>
-      <td>Publish Time</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @jobs.each do |job| %>
+<div class="col-lg-8 col-lg-offset-2">
+  <h4>Better job, better life</h4>
+  <hr>
+  <table class="table table-hover">
+    <thead>
       <tr>
-        <td><%= link_to(job.title, job_path(job)) %></td>
-        <td><%= job.wage_lower_bound %></td>
-        <td><%= job.wage_upper_bound %></td>
-        <td><%= job.created_at %></td>
+        <td>Title</td>
+        <td>Lower Salary</td>
+        <td>Upper Salary</td>
+        <td>Publish Time</td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @jobs.each do |job| %>
+        <tr>
+          <td><%= link_to(job.title, job_path(job)) %></td>
+          <td><%= job.wage_lower_bound %></td>
+          <td><%= job.wage_upper_bound %></td>
+          <td><%= job.created_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
