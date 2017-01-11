@@ -6,7 +6,7 @@
     <%= link_to("Destroy", admin_job_path(@job), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure?" }) %>
   </div>
   <p>Title: <%= @job.title %></p>
-  <p>Title: <%= @job.description %></p>
+  <p>Description: <%= simple_format(@job.description) %></p>
   <p>Salary: <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %></p>
   <p>Contact: <%= @job.contact_email %></p>
   <p>Published: <%= @job.created_at %></p>
