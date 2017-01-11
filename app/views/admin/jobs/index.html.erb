@@ -25,8 +25,13 @@
           <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
           <td>
-            <%= link_to('<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'.html_safe, edit_admin_job_path(job)) %> |
-            <%= link_to('<i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, admin_job_path(job), method: :delete, data: { confirm: "Are your sure?" }) %>
+            <%= link_to('<i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>'.html_safe, edit_admin_job_path(job)) %> |
+            <%= link_to('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>'.html_safe, admin_job_path(job), method: :delete, data: { confirm: "Are your sure?" }) %> |
+            <% if job.is_hidden %>
+              <%= link_to('<i class="fa fa-eye fa-lg" aria-hidden="true"></i>'.html_safe, publish_admin_job_path(job), method: :post) %>
+            <% else %>
+              <%= link_to('<i class="fa fa-eye-slash fa-lg" aria-hidden="true"></i>'.html_safe, hide_admin_job_path(job), method: :post) %>
+            <% end %>
           </td>
         </tr>
       <% end %>
