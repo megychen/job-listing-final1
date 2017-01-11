@@ -10,4 +10,19 @@
   <p>Salary: <%= @job.wage_lower_bound %> ~ <%= @job.wage_upper_bound %></p>
   <p>Contact: <%= @job.contact_email %></p>
   <p>Published: <%= @job.created_at %></p>
+
+  <% @resumes.each do |resume| %>
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= resume.user.email %></div>
+      <div class="panel-body"><%= resume.content %></div>
+      <div class="panel-footer">
+        <% if resume.attachment.present? %>
+        <i class="fa fa-paperclip"></i>
+          <%= link_to("Download Resume", resume.attachment_url) %>
+        <% else %>
+          No Attachment
+        <% end %>
+      </div>
+    </div>
+  <% end %>
 </div>

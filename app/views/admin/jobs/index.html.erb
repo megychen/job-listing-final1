@@ -11,6 +11,7 @@
         <td>Lower Salary</td>
         <td>Upper Salary</td>
         <td>Publish Time</td>
+        <td>Resume Count</td>
         <td></td>
       </tr>
     </thead>
@@ -24,6 +25,9 @@
           <td><%= job.wage_lower_bound %></td>
           <td><%= job.wage_upper_bound %></td>
           <td><%= job.created_at %></td>
+          <td>
+            <%= link_to(job.resumes.count, admin_job_path(job)) %>
+          </td>
           <td>
             <%= link_to('<i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>'.html_safe, edit_admin_job_path(job)) %> |
             <%= link_to('<i class="fa fa-trash-o fa-lg" aria-hidden="true"></i>'.html_safe, admin_job_path(job), method: :delete, data: { confirm: "Are your sure?" }) %> |
