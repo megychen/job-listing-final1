@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JobListing</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render "common/navbar" %>
+    <%= render "common/flashes" %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+          <ul class="nav nav-pills nav-justified" style="max-width: 300px;">
+            <li class="active"><a href="#">Home</a></li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render "common/footer" %>
+  </body>
+</html>
