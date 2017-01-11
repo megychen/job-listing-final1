@@ -21,6 +21,9 @@
             </a>
             <ul class="dropdown-menu">
               <li>
+                <%= link_to('<span class="glyphicon glyphicon-home"></span> Admin Panel'.html_safe, admin_jobs_path) %>
+              </li>
+              <li>
                 <%= link_to("<span class='glyphicon glyphicon-log-out'></span> Logout".html_safe, destroy_user_session_path, method: :delete) %>
               </li>
             </ul>
