@@ -10,7 +10,7 @@ Rails.application.routes.draw do
         post :publish
       end
       resources :resumes
-    end    
+    end
   end
-  root "jobs#index"
+  root "welcome#index"
 end

@@ -10,6 +10,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to("Blog", "#") %>
+        </li>
         <% if !current_user %>
           <li><%= link_to('<span class="glyphicon glyphicon-user"></span> Sign Up'.html_safe, new_user_registration_path) %></li>
           <li><%= link_to('<span class="glyphicon glyphicon-log-in"></span> Login'.html_safe, new_user_session_path) %></li>
