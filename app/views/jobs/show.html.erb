@@ -1,0 +1,16 @@
+<div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+  <div class="show-header">
+
+  </div>
+  <div class="show-logo">
+    Category logo
+  </div>
+  <h3 class="text-center"><%= @job.title %> at <%= @job.company %></h1>
+  <p>
+    Job Description: <br>
+    <%= @job.description %>
+  </p>
+  <div class="text-center">
+    <%= link_to("Apply Now", new_job_resume_path(@job), class: "btn btn-primary") %>
+  </div>
+</div>
